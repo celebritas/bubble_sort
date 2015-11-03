@@ -1,9 +1,14 @@
 import random
+import datetime
 my_list = []
 for i in range(0,100):
 	my_list.append(random.randint(0, 10000))
+time_start = datetime.datetime.now()
 for x in range(len(my_list)-1,0,-1):
 	for i in range(x):
 		if my_list[i+1] < my_list[i]:
 			(my_list[i], my_list[i+1]) = (my_list[i+1], my_list[i])
+time_end = datetime.datetime.now()
 print my_list
+time = time_end - time_start
+print 'Sorting tooks', time.microseconds, 'microseconds, or', time.seconds, 'seconds'

@@ -6,15 +6,19 @@ for i in range(0,100):
 time_start = datetime.datetime.now()
 
 def selection_sort(my_list):
+	count = 0
 	for x in range(len(my_list)-1, 0, -1):
 		m = 0
 		for i in range(1, x+1):
 			if my_list[i] > my_list[m]:
 				m = i
 		(my_list[m], my_list[x]) = (my_list[x], my_list[m])
+		count += 1
+	print 'Were done with', count, 'if-statments'
 
 selection_sort(my_list)
 time_end = datetime.datetime.now()
 print my_list
 time = time_end - time_start
 print 'Sorting tooks', time.microseconds, 'microseconds, or', time.seconds, 'seconds'
+
